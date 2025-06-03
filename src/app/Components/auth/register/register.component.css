@@ -1,0 +1,77 @@
+/* Container styles */
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Spacing between form fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+button[mat-raised-button] {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #1976d2; /* darker shade on hover */
+}
+
+/* Tooltip customization (optional) */
+.mat-tooltip {
+  font-size: 13px;
+  padding: 8px 10px;
+  background-color: #616161;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Link styles */
+span {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #555;
+}
+
+.registerlink {
+  color: #3f51b5;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.registerlink:hover {
+  color: #303f9f;
+  text-decoration: underline;
+}
+
+/* Form field icons */
+mat-icon {
+  color: rgba(0, 0, 0, 0.54);
+  transition: color 0.2s;
+}
+
+mat-icon:hover {
+  color: #3f51b5;
+}
+
+/* Responsive design */
+@media screen and (max-width: 480px) {
+  .login-container {
+    margin: 20px;
+    padding: 20px 15px;
+  }
+}

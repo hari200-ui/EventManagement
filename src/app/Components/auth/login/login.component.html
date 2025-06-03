@@ -1,0 +1,43 @@
+<div class="login-container">
+  <form [formGroup]="loginForm">
+<div>
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+    <input formControlName="username" matInput placeholder="Username">
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+</div>
+
+<div>
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input
+      [type]="hide ? 'password' : 'text'"
+      formControlName="password"
+      matInput
+      placeholder="Password"
+    >
+  <mat-icon
+  matSuffix
+  class="eye-icon"
+  (click)="hide = !hide"
+  [attr.aria-label]="'Toggle password visibility'"
+  [attr.aria-pressed]="!hide"
+>
+  {{ hide ? 'visibility_off' : 'visibility' }}
+</mat-icon>
+
+  </mat-form-field>
+</div>
+
+<div>
+  <button (click)="login()" [disabled]="!loginForm.valid"
+  matButton="elevated"
+  matTooltip="Please enter details">Sign in</button>
+</div>
+</form>
+
+<span>If you don't have account <a class="registerlink" (click)="register()">Register</a></span>
+
+</div>

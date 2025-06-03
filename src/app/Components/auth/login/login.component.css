@@ -1,0 +1,63 @@
+/* Container styling */
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Form fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Sign-in button */
+button[matButton] {
+  width: 100%;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+/* Register text */
+span {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Register link */
+.registerlink {
+  cursor: pointer;
+  color: rgb(0, 102, 255);
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 102, 255);
+}
+
+/* Optional: Focus states and hover for better UX */
+.registerlink:hover {
+  color: rgb(0, 72, 190);
+  text-decoration-thickness: 2px;
+}
+
+/* Responsive handling */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px 10px;
+    margin: 30px auto;
+  }
+}
+
+.eye-icon {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.54); /* matches Material style */
+  margin-left: 8px;
+  user-select: none;
+}
+
+.eye-icon:hover {
+  color: rgba(0, 0, 0, 0.87); /* darken on hover */
+}
