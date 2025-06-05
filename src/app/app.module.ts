@@ -10,14 +10,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatButton} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 import {ReactiveFormsModule} from '@angular/forms';
+import { EventComponent } from './Components/event/event.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EventComponent
 
   ],
   imports: [
@@ -28,6 +31,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     MatButton,
     MatTooltip,
+    MatTableModule,
     ReactiveFormsModule
 
   ],
