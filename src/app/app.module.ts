@@ -13,6 +13,8 @@ import {MatButton} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EventComponent } from './Components/event/event.component';
+import { HomeComponent } from './Components/home/home.component';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { EventComponent } from './Components/event/event.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    EventComponent
+    EventComponent,
+    HomeComponent,
 
   ],
   imports: [

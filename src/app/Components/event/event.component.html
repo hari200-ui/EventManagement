@@ -1,20 +1,23 @@
-<div class="event-container">
-  <!-- your form and table code -->
-
 <form [formGroup]="eventForm" (ngSubmit)="addOrUpdateEvent()" class="event-form">
   <input placeholder="Event Name" formControlName="name" />
   <input type="date" formControlName="date" />
+  <input type="time" formControlName="time" />
+<!-- Image File Input -->
+<input type="file" (change)="onImageSelected($event)" accept=".jpg,.jpeg,image/jpeg" />
+
+<!-- Preview Selected Image -->
+<img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" width="100" height="100" />
+
+<textarea placeholder="About the Event" formControlName="about"></textarea>
   <input placeholder="Location" formControlName="location" />
+  <input type="number" placeholder="Seat Capacity" formControlName="seatCapacity" />
 
   <button mat-button color="primary" type="submit">
     {{ editingIndex !== null ? 'Update Event' : 'Create Event' }}
   </button>
-  <button mat-button type="button" *ngIf="editingIndex !== null" (click)="cancelEdit()">
-    Cancel
-  </button>
+  <button mat-button type="button" *ngIf="editingIndex !== null" (click)="cancelEdit()">Cancel</button>
 </form>
 
-<!-- Event Table -->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
   <!-- ID Column -->
   <ng-container matColumnDef="id">
@@ -40,17 +43,41 @@
     <td mat-cell *matCellDef="let event"> {{event.location}} </td>
   </ng-container>
 
+  <!-- Seat Capacity Column -->
+  <ng-container matColumnDef="seatCapacity">
+    <th mat-header-cell *matHeaderCellDef> Seat Capacity </th>
+    <td mat-cell *matCellDef="let event"> {{event.seatCapacity}} </td>
+  </ng-container>
+
   <!-- Actions Column -->
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
     <td mat-cell *matCellDef="let event; let i = index">
       <button mat-button (click)="editEvent(i)">Edit</button>
       <button mat-button color="warn" (click)="deleteEvent(i)">Delete</button>
+      <button mat-button color="accent" (click)="pushEvent(event)">Push</button>
     </td>
   </ng-container>
+
+  <ng-container matColumnDef="time">
+  <th mat-header-cell *matHeaderCellDef> Time </th>
+  <td mat-cell *matCellDef="let event"> {{event.time}} </td>
+</ng-container>
+
+<!-- Image Column -->
+<ng-container matColumnDef="image">
+  <th mat-header-cell *matHeaderCellDef> Image </th>
+  <td mat-cell *matCellDef="let event">
+    <img [src]="event.image" alt="Event Image" width="50" height="50" />
+  </td>
+</ng-container>
+
+<!-- About Column -->
+<ng-container matColumnDef="about">
+  <th mat-header-cell *matHeaderCellDef> About </th>
+  <td mat-cell *matCellDef="let event"> {{event.about}} </td>
+</ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
-</div>
