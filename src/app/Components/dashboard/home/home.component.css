@@ -1,0 +1,41 @@
+/* Custom Navbar Styles */
+.navbar {
+  background-color: #1e2a38 !important; /* Deep navy background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #00bcd4 !important; /* Teal accent on hover */
+}
+
+.form-control {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.25);
+}
+
+.btn-outline-success {
+  color: #00bcd4;
+  border-color: #00bcd4;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-success:hover {
+  background-color: #00bcd4;
+  color: #ffffff;
+}

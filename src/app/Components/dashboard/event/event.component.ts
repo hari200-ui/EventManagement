@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
+import { EventService } from '../event.service';
 
 export interface EventItem {
   id: number;
@@ -29,7 +30,7 @@ export class EventComponent implements OnInit {
   eventForm!: FormGroup;
   editingIndex: number | null = null;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private eventService: EventService) {}
 
   ngOnInit() {
    this.eventForm = this.fb.group({
@@ -99,7 +100,6 @@ addOrUpdateEvent() {
   this.imagePreview = event.image;
 }
 
-
   deleteEvent(index: number) {
     this.dataSource.splice(index, 1);
     this.table.renderRows();
@@ -112,10 +112,9 @@ addOrUpdateEvent() {
   this.selectedImageFile = null;
 }
 
-
   pushEvent(event: EventItem) {
-    // You can replace this with real API integration or logic
-    console.log(`Pushing event ID ${event.id}:`, event);
-    alert(`Event "${event.name}" has been pushed!`);
-  }
+  this.eventService.pushEvent(event);
+  alert(`Event "${event.name}" has been pushed to the home page!`);
+  console.log('EventComponent pushing:', event);
+}
 }
