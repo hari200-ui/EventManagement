@@ -1,0 +1,15 @@
+<div class="dashboard-container">
+  <nav class="sidebar">
+    <h3>User Panel</h3>
+    <ul>
+      <li><a routerLink="events">🎫 Events</a></li>
+      <li><a routerLink="bookings">📖 Booking History</a></li>
+      <li><a routerLink="notifications">🔔 Notifications</a></li>
+      <li><a (click)="logout()" class="logout-btn">🚪 Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

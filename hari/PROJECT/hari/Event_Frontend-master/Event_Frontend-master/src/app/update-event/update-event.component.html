@@ -1,0 +1,15 @@
+<div class="update-event-form">
+  <h2>Edit Event</h2>
+  <form (ngSubmit)="updateEvent()">
+    <input [(ngModel)]="eventData.title" name="title" placeholder="Title" required />
+    <input [(ngModel)]="eventData.date" name="date" placeholder="Date" type="date" required />
+    <input [(ngModel)]="eventData.location" name="location" placeholder="Location" required />
+    <input [(ngModel)]="eventData.category" name="category" placeholder="Category" />
+    <input [(ngModel)]="eventData.availableSeats" name="availableSeats" type="number" placeholder="Available Seats" />
+    <textarea [(ngModel)]="eventData.description" name="description" placeholder="Description"></textarea>
+    <input [(ngModel)]="eventData.startTime" name="startTime" placeholder="Start Time" type="time" />
+    <input [(ngModel)]="eventData.endTime" name="endTime" placeholder="End Time" type="time" />
+    <input type="file" (change)="onFileSelected($event)" />
+    <button type="submit">Update Event</button>
+  </form>
+</div>

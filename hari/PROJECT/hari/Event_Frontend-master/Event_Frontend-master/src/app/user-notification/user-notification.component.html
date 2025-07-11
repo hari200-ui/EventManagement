@@ -1,0 +1,16 @@
+<div class="notifications">
+  <h2>Notifications</h2>
+
+  <div class="notification-card" *ngFor="let note of notifications" [class.read]="note.read">
+    <div class="notification-content">
+      <p class="message">{{ note.message }}</p>
+      <small class="timestamp">{{ note.timestamp | date: 'medium' }}</small>
+    </div>
+    <div class="notification-action">
+      <button *ngIf="!note.read" (click)="markAsRead(note.id)">Mark as Read</button>
+      <span *ngIf="note.read" class="status-read">✔ Read</span>
+    </div>
+  </div>
+<link rel="stylesheet" href="user-notification.component.css">
+  <p *ngIf="notifications.length === 0" class="no-notifications">You have no notifications.</p>
+</div>

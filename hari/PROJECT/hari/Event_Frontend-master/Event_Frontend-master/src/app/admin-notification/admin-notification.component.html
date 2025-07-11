@@ -1,0 +1,26 @@
+<div class="notification-form">
+  <h2>Send Notification</h2>
+  <table class="form-table">
+    <tr>
+      <td><label>User ID:</label></td>
+      <td><input type="number" [(ngModel)]="userId" placeholder="Enter User ID"></td>
+    </tr>
+    <tr>
+      <td><label>Event ID:</label></td>
+      <td><input type="number" [(ngModel)]="eventId" placeholder="Enter Event ID"></td>
+    </tr>
+    <tr>
+      <td><label>Message:</label></td>
+      <td><textarea [(ngModel)]="message" placeholder="Enter your message"></textarea></td>
+    </tr>
+  </table>
+
+  <div class="button-row">
+    <button (click)="sendToUser()">Send to User</button>
+    <!-- <button (click)="sendToEventUsers()">Send to Event Users</button> -->
+  </div>
+  <link rel="stylesheet" href="admin-notification.component.css">
+  <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>
+

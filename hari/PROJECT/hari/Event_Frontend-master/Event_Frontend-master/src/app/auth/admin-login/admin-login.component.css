@@ -1,0 +1,101 @@
+.login-container {
+    max-width: 360px;
+    margin: 80px auto;
+    padding: 30px 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('loginImage.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #222;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.login-container p {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #d93025;
+    /* red for errors */
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    color: #0056b3;
+}
+.login-container {
+    max-width: 550px; /* Increased size */
+    margin: 80px auto;
+    padding: 40px 35px; /* More padding */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

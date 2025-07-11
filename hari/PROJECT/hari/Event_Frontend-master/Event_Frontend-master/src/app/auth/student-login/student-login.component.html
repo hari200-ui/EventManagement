@@ -1,0 +1,26 @@
+<body><div class="login-container">
+    <h2>User Login</h2>
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="email" required />
+
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="password" required />
+
+    <button type="button" (click)="onLogin()">Login</button>
+
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+    <p class="register-link">
+        New user?
+        <a (click)="goToRegister()" style="cursor: pointer;">Register here</a>
+    </p>
+
+    <p class="forgot-password-link">
+        Forgot password?
+        <a (click)="goToForgotPassword()" style="cursor: pointer;">Reset here</a>
+    </p>
+</div>
+
+    
+</body>

@@ -1,0 +1,17 @@
+<body>
+  <div class="dashboard-container">
+    <nav class="sidebar">
+      <h3>Admin Panel</h3>
+      <ul>
+        <li><a routerLink="/create-event" routerLinkActive="active">➕ Create Event</a></li>
+        <li><a routerLink="/display-event" routerLinkActive="active">📌 Display Events</a></li>
+        <li><a routerLink="/admin-bookings" routerLinkActive="active">📖 View All Bookings</a></li>
+        <li><a routerLink="/admin/notifications" routerLinkActive="active">🔔 Send Notifications</a></li>
+        <li><a (click)="logout()" class="logout-btn">🚪 Logout</a></li>
+      </ul>
+    </nav>
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</body>

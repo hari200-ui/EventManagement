@@ -1,0 +1,38 @@
+<body>
+  
+
+<div class="event-container">
+  <h2>📅 Upcoming Events</h2>
+
+  <div *ngIf="events.length > 0; else noEvents">
+    <div class="event-list">
+      <div
+        *ngFor="let event of events"
+        class="event-item"
+        (click)="goToDetails(event.id)"
+        style="cursor: pointer;"
+      >
+        <img
+          *ngIf="event.imageUrl"
+          [src]="event.imageUrl"
+          alt="Event Image"
+          class="event-image"
+        />
+        <p class="event-title">{{ event.title }}</p>
+        <p class="event-details">📍 {{ event.location }}</p>
+        <p class="event-details">🗂️ {{ event.category }}</p>
+        <p class="event-details">🪑 Seats: {{ event.availableSeats }}</p>
+        <p class="event-details">📅 {{ event.date }}</p>
+        <p class="event-details">
+          🕒 {{ event.startTime | date: 'shortTime' }} - {{ event.endTime | date: 'shortTime' }}
+        </p>
+        <p class="event-description">{{ event.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noEvents>
+    <p>No events available.</p>
+  </ng-template>
+</div>
+</body>

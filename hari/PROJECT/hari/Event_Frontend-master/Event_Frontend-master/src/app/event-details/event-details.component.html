@@ -1,0 +1,26 @@
+<body>
+  
+
+<div *ngIf="event; else loading" class="event-details-container">
+  <h2>{{ event.title }}</h2>
+  <p><strong>Date:</strong> {{ event.date }}</p>
+  <p><strong>Category:</strong> {{ event.category }}</p>
+  <p><strong>Available Seats:</strong> {{ event.availableSeats }}</p>
+  <p><strong>Description:</strong> {{ event.description }}</p>
+  <p><strong>Location:</strong> {{ event.location }}</p>
+
+  <p *ngIf="event.startTime && event.endTime">
+    <strong>Time:</strong> {{ event.startTime | date:'shortTime' }} - {{ event.endTime | date:'shortTime' }}
+  </p>
+
+  <div *ngIf="event.imageUrl || event.image">
+    <img [src]="event.imageUrl || event.image" alt="Event Image" class="event-image" />
+  </div>
+
+  <button (click)="bookSeats()" class="book-btn">🎟️ Book Seats</button>
+</div>
+
+<ng-template #loading>
+  <p>Loading event details...</p>
+</ng-template>
+</body>

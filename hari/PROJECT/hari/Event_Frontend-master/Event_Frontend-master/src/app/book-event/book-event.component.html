@@ -1,0 +1,7 @@
+<div class="booking-form">
+  <h2>Book Event</h2>
+  <label for="seats">Number of Seats:</label>
+  <input type="number" [(ngModel)]="seats" min="1" required>
+  <br /><br />
+  <button (click)="bookEvent()">Book</button>
+</div>
